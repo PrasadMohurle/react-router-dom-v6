@@ -1,0 +1,21 @@
+[
+    {
+      "username": "satish",
+      "email": "satish@gmail.com",
+      "password": "s123",
+      "role": "admin"
+    },
+    {
+      "username": "prasad",
+      "email": "prasad@gmail.com",
+      "password": "p123",
+      "role": "scheduler"
+    },
+    {
+      "username": "nabeel",
+      "email": "nabeel@gmail.com",
+      "password": "n123",
+      "role": "watcher"
+    }
+  ]
+  
