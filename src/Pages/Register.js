@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+// import {faCheck ,faTimes, faInfoCircle} from '@fortawesome/free-solid-svg-icons';
+// import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import './form.css';
 
 const Register = (props) => {
@@ -32,6 +34,13 @@ const Register = (props) => {
     const toLogin = () => {
         navigate('/login');
     };
+
+    useEffect(() => {
+        var isLogin = sessionStorage.getItem('isLogin');
+        if(isLogin){
+            navigate('/dashboard')
+        }
+    }, [])
 
     return (
         <div className="form-container">

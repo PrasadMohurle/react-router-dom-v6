@@ -1,9 +1,11 @@
-import React from 'react'
+import React from 'react';
 
 const Visualisation = () => {
-  return (
-    <div>Visualisation</div>
-  )
-}
+    return (
+        <>
+            <h1>Visualisation</h1>
+        </>
+    );
+};
 
-export default Visualisation
+export default Visualisation;

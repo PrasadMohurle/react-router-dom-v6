@@ -1,9 +1,11 @@
-import React from 'react'
+import React from 'react';
 
 const MasterData = () => {
-  return (
-    <div>MasterData</div>
-  )
-}
+    return (
+        <>
+            <h1>Master Data</h1>
+        </>
+    );
+};
 
-export default MasterData
+export default MasterData;

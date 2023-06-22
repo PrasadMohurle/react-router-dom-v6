@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import userData from '../Data/users.json';
 
@@ -17,6 +17,8 @@ const Login = () => {
         );
 
         if (user) {
+            sessionStorage.setItem('role', user.role);
+            sessionStorage.setItem('isLogin', true)
             navigate('/dashboard');
         } else {
             setErrorMessage('Invalid email or password. Please try again.');
@@ -28,6 +30,13 @@ const Login = () => {
     const toRegister = () => {
         navigate('/register');
     };
+
+    useEffect(() => {
+        var isLogin = sessionStorage.getItem('isLogin');
+        if(isLogin){
+            navigate('/dashboard')
+        }
+    }, [])
 
     return (
         <div className="form-container">

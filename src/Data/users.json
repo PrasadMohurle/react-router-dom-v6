@@ -6,10 +6,16 @@
       "role": "admin"
     },
     {
+      "username": "hpcl",
+      "email": "hpcl@gmail.com",
+      "password": "h123",
+      "role": "scheduler"
+    },
+    {
       "username": "prasad",
       "email": "prasad@gmail.com",
       "password": "p123",
-      "role": "scheduler"
+      "role": "watcher"
     },
     {
       "username": "nabeel",
