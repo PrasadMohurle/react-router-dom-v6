@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { saveUserData } from '../Utils/api';
 import './form.css';
 
 const Register = (props) => {
+    const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [username, setUsername] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -14,10 +16,16 @@ const Register = (props) => {
         console.log('Username:', username);
         console.log('Eamil:', email);
         console.log('Password:', password);
+        console.log('ConfirmPassword:', confirmPassword);
 
-        // const userData = { username, email, password, role: 'watcher' };
-        // saveUserData(userData);
         navigate('/login');
+
+        if (username && email && password && confirmPassword) {
+            navigate('/login');
+        } else {
+            setErrorMessage('All fields are necessary.');
+            navigate('/register');
+        }
     };
 
     const navigate = useNavigate();
@@ -28,13 +36,14 @@ const Register = (props) => {
     return (
         <div className="form-container">
             <h1>Registeration Form</h1>
+            {errorMessage && <p className="error-message">{errorMessage}</p>}
             <form onSubmit={handleSubmit} className="form">
                 <div className="form-element">
                     <label htmlFor="username">Username</label>
                     <input
                         type="text"
                         value={username}
-                        onChange={(e) => setUsername(e.target.value)}
+                        onChange={(e) => {setUsername(e.target.value); setErrorMessage('')}}
                         name="username"
                         id="username"
                         placeholder="Usename"
@@ -46,7 +55,7 @@ const Register = (props) => {
                     <input
                         type="email"
                         value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        onChange={(e) => {setEmail(e.target.value); setErrorMessage('')}}
                         name="email"
                         id="email"
                         placeholder="youremail@gmail.com"
@@ -58,10 +67,21 @@ const Register = (props) => {
                     <input
                         type="password"
                         value={password}
-                        onChange={(e) => setPassword(e.target.value)}
+                        onChange={(e) => {setPassword(e.target.value); setErrorMessage('')}}
                         name="password"
                         id="password"
-                        placeholder="********"
+                        placeholder="Password"
+                    />
+                </div>
+                <div className="form-element">
+                    <label htmlFor="confirmPassword">Confirm Password</label>
+                    <input
+                        type="password"
+                        value={confirmPassword}
+                        onChange={(e) => {setConfirmPassword(e.target.value); setErrorMessage('')}}
+                        name="confirmPassword"
+                        id="confirmPassword"
+                        placeholder="Password"
                     />
                 </div>
 

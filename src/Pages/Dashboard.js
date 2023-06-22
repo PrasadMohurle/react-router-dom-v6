@@ -6,7 +6,7 @@ import Scheduler from './Scheduler';
 import MasterData from './MasterData'
 
 const Dashboard = () => {
-    const [currentPage, setCurrentPage] = useState('home'); // Initial page is 'home'
+    const [currentPage, setCurrentPage] = useState('visualisation'); // Initial page is 'home'
 
     // Function to handle link clicks and update the current page
     const handleLinkClick = (page) => {

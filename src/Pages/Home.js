@@ -7,10 +7,7 @@ const Home = () => {
         navigate('/login');
     };
 
-    // const toRegister = () => {
-    //     navigate('/register');
-    // };
-
+ 
     return (
         <>
             <div className="home-container">
@@ -20,10 +17,6 @@ const Home = () => {
                 <button className="link-btn login-btn" onClick={toLogin}>
                     Login
                 </button>
-
-                {/* <button className="link-btn register-btn" onClick={toRegister}>
-                    Register here.
-                </button> */}
             </div>
         </>
     );
